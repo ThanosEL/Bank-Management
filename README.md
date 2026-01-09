@@ -28,30 +28,36 @@ The application allows users to:
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Create a Virtual Environment
+1. Create a virtual enviroment
+    python3 -m venv venv
+    source venv/bin/activate
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
+2. Install dependencies
+    pip install -r requirements.txt
+    
+3. Set up MySQL database
+   sql'''
+    CREATE DATABASE bank_db;
+    USE bank_db;
+    CREATE TABLE banks (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        location VARCHAR(100)
+    );
+   '''
 
-pip install -r requirements.txt
+5. Configure your credentials in config.py
+    class Config:
+        MYSQL_HOST = 'localhost'
+        MYSQL_USER = 'your_user'
+        MYSQL_PASSWORD = 'your_password'
+        MYSQL_DB = 'BankDB'
+        MYSQL_CURSORCLASS = 'DictCursor'
 
-CREATE DATABASE bank_db;
-USE bank_db;
-
-CREATE TABLE banks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    location VARCHAR(100)
-);
-
-class Config:
-    MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'your_user'
-    MYSQL_PASSWORD = 'your_password'
-    MYSQL_DB = 'bank_db'
-    MYSQL_CURSORCLASS = 'DictCursor'
+6. Run the Application
+    python3 app.py
+    
 
 
