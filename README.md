@@ -49,14 +49,15 @@ The application allows users to:
     ```
 
 5. Configure your credentials in config.py
+   ```
     class Config:
         MYSQL_HOST = 'localhost'
         MYSQL_USER = 'your_user'
         MYSQL_PASSWORD = 'your_password'
         MYSQL_DB = 'BankDB'
         MYSQL_CURSORCLASS = 'DictCursor'
-
-6. Run the Application
+     ```
+7. Run the Application
     python3 app.py
     
 
