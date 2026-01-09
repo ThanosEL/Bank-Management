@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Edit Bank</title></head>
+    <body>
+        <h2>Edit Bank</h2>
+        <form method="POST">
+            <label>Name:</label><br>
+            <input type="text" name="name" value="{{ bank[1] }}" required><br><br>
+            <label>Location:</label><br>
+            <input type="text" name="location" value="{{ bank[2] }}" required><br><br>
+            <input type="submit" value="Update">
+        </form>
+        <br>
+        <a href="/banks">Back to List</a>
+    </body>
+</html>
