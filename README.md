@@ -47,29 +47,33 @@ CREATE TABLE banks (
 
 ---
 
-⚙️ Setup Instructions
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/bank_app.git
-cd bank_app
+## Setup Instructions
 
-2️⃣ Create a Virtual Environment
-python3 -m venv venv
-source venv/bin/activate
+1. Create a virtual enviroment
+    python3 -m venv venv
+    source venv/bin/activate
 
-3️⃣ Install Dependencies
-pip install -r requirements.txt
+2. Install dependencies
+    pip install -r requirements.txt
+    
+3. Set up MySQL database
+    CREATE DATABASE bank_db;
+    USE bank_db;
+    CREATE TABLE banks (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        location VARCHAR(100)
+    );
 
-4️⃣ Configure Database Credentials
+4. Configure your credentials in config.py
+    class Config:
+        MYSQL_HOST = 'localhost'
+        MYSQL_USER = 'your_user'
+        MYSQL_PASSWORD = 'your_password'
+        MYSQL_DB = 'BankDB'
+        MYSQL_CURSORCLASS = 'DictCursor'
 
-Edit config.py and update your MySQL credentials:
+5. Run the Application
+    python3 app.py
 
-class Config:
-    MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'your_user'
-    MYSQL_PASSWORD = 'your_password'
-    MYSQL_DB = 'bank_db'
-    MYSQL_CURSORCLASS = 'DictCursor'
-
-5️⃣ Run the Application
-python3 app.py
 
