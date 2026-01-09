@@ -28,25 +28,6 @@ The application allows users to:
 
 ---
 
-
----
-
-## 🗄 Database Schema
-
-The application uses a MySQL database with the following schema:
-
-''' sql
-CREATE DATABASE bank_db;
-USE bank_db;
-
-CREATE TABLE banks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    location VARCHAR(100)
-);
-
----
-
 ## Setup Instructions
 
 1. Create a virtual enviroment
@@ -57,13 +38,15 @@ CREATE TABLE banks (
     pip install -r requirements.txt
     
 3. Set up MySQL database
-    CREATE DATABASE bank_db;
-    USE bank_db;
-    CREATE TABLE banks (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(100),
-        location VARCHAR(100)
-    );
+    '''sql
+CREATE DATABASE bank_db;
+USE bank_db;
+
+CREATE TABLE banks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    location VARCHAR(100)
+);
 
 4. Configure your credentials in config.py
     class Config:
