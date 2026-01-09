@@ -38,7 +38,7 @@ The application allows users to:
     pip install -r requirements.txt
     
 3. Set up MySQL database
-   sql'''
+    '''sql
     CREATE DATABASE bank_db;
     USE bank_db;
     CREATE TABLE banks (
@@ -46,7 +46,7 @@ The application allows users to:
         name VARCHAR(100),
         location VARCHAR(100)
     );
-   '''
+    '''
 
 5. Configure your credentials in config.py
     class Config:
